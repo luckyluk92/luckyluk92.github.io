@@ -43,6 +43,24 @@
   font-style: italic;
 }
 
+.post-header {
+  .post-data {
+    height: 70px;
+    box-sizing: border-box;
+  }
+  .post-data .avatar {
+    width: 70px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px;
+  }
+  .post-data .post-info {
+    height: 100%;
+    float:left;
+  }
+
+}
+
 .related-post-title {
   border-bottom: thin solid #f3f3f3;
 }
