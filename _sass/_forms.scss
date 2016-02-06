@@ -41,6 +41,7 @@ textarea {
   box-sizing: border-box;
   line-height: 1.75;
   padding: $form-field-padding-y $form-field-padding-x;
+  max-width: 100%;
 }
 
 .form-stacked input,

@@ -91,9 +91,9 @@ text:
 
 
 # Build settings
-markdown:     kramdown
+markdown:     redcarpet
 redcarpet:
-  extensions: ['smart', 'tables', 'with_toc_data']
+  extensions: ['smart', 'tables', 'with_toc_data', 'fenced_code_blocks']
 permalink:    pretty
 paginate:     4
 sass:
