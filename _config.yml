@@ -1,6 +1,6 @@
 # Site settings
 title:       Łukasz Kiełczykowski
-email:       kielczykowski.lukasz@gmail.com
+email:
 author:      Łukasz Kiełczykowski
 description: "Łukasz Kiełczykowski's personal and professional blog."
 baseurl:     ""
@@ -56,6 +56,10 @@ share_tumblr: false
 share_reddit: false
 share_stumbleupon: false
 share_hackernews: false
+
+page_list:
+  Archive: '/archive'
+  About: '/about'
 
 text:
   pagination:

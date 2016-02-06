@@ -1,0 +1,19 @@
+---
+layout: default
+title: Archive
+---
+
+<div class="archive">
+  {% for post in site.posts %}
+    <div>
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+        <span class="post-date">{{ post.date | date: site.date_format }}</span>
+        <span class="post-title">{{ post.title }}</span>
+      </a>
+    </div>
+    {% if forloop.index < forloop.length %}
+      {{post.next}}
+      <div class="divider"></div>
+    {% endif %}
+  {% endfor %}
+</div>
