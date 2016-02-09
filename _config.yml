@@ -97,7 +97,7 @@ text:
 # Build settings
 markdown:     redcarpet
 redcarpet:
-  extensions: ['smart', 'tables', 'with_toc_data', 'fenced_code_blocks']
+  extensions: ['smart', 'tables', 'with_toc_data', 'fenced_code_blocks', 'footnotes']
 permalink:    pretty
 paginate:     4
 sass:

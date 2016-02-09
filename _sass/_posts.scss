@@ -22,9 +22,9 @@
 
 .post-footer {
   @extend .italic;
-
-  margin-top: .75rem;
+  background-color: #eee;
   text-align: center;
+  padding: 40px 0;
 }
 
 .post-footer .avatar {
