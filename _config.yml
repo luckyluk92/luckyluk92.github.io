@@ -12,7 +12,7 @@ google_analytics: "UA-73317662-1"
 google_verification:
 
 # Optional features
-animated:             true
+animated:             false
 show_related_posts:   false
 show_post_footers:    true
 show_social_icons:    true
@@ -92,6 +92,12 @@ text:
       sent:     'Message sent!'
       error:    'Error!'
   thanks: 'Thanks for contacting us. We will reply as soon as possible.'
+
+cookie_consent:
+  msg: 'This website uses cookies to ensure you get the best experience on our website.'
+  link: 'https://www.wikipedia.org/wiki/HTTP_cookie'
+  learn_more: 'Learn more...'
+  confirmation: 'Got it!'
 
 
 # Build settings
