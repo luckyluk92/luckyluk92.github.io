@@ -3,7 +3,7 @@ layout:     post
 title:      Test post
 date:       2015-07-11
 summary:    This is some test post for blog.
-categories: test
+tags: test stuff
 ---
 
 This is some sentence.

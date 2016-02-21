@@ -1,0 +1,22 @@
+---
+layout: page
+title: Tags
+permalink: /tags/
+---
+
+{% capture tags %}
+  {% for tag in site.tags %}
+    {{ tag[0] }}
+  {% endfor %}
+{% endcapture %}
+{% assign sorted_tags = tags | split: ' ' | sort %}
+
+{% for tag in sorted_tags %}
+  {% assign posts = site.tags[tag] %}
+  <div id={{ tag }} class='tag-container'>
+    <h3>{{ tag }}</h3>
+    <div class='post-list small'>
+      {% include post_list.html posts=posts %}
+    </div>
+  </div>
+{% endfor %}

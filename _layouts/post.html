@@ -14,9 +14,11 @@ layout: default
     <div class="post-info">
       <div class="post-meta">
         {{ page.date | date: site.date_format }}
-        {% if page.update_date %}
-        </br>
-        <span class="post-meta">{{ site.text.post.updated }}: {{ page.update_date | date: site.date_format }}</span><br>
+        {% if page.tags %}
+          <span> | Tags: </span>
+          {% for tag in page.tags %}
+            <a href='{{ site.page_list.Tags }}/#{{ tag }}'>#{{ tag }}</a>
+          {% endfor %}
         {% endif %}
       </div>
       <div class="post-meta small">
