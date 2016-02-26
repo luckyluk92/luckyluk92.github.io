@@ -60,6 +60,7 @@ share_hackernews: false
 page_list:
   Archive: '/archive'
   About: '/about'
+  Tags: '/tags'
 
 text:
   pagination:
@@ -103,7 +104,7 @@ cookie_consent:
 # Build settings
 markdown:     redcarpet
 redcarpet:
-  extensions: ['smart', 'tables', 'with_toc_data', 'fenced_code_blocks', 'footnotes']
+  extensions: ['smart', 'tables', 'with_toc_data', 'fenced_code_blocks', 'footnotes', 'strikethrough']
 permalink:    pretty
 paginate:     4
 sass:
