@@ -4,7 +4,7 @@ email:
 author:      Łukasz Kiełczykowski
 description: "Łukasz Kiełczykowski's personal and professional blog."
 baseurl:     ""
-url:         "http://kielczykowski.pl"
+url:         "http://dev.kielczykowski.pl"
 date_format: "%b %-d, %Y"
 
 # Google services
