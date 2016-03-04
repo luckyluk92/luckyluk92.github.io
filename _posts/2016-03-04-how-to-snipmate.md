@@ -87,5 +87,4 @@ Do you have any favorite plugins? Tell me about them in the comments!
 
 Clever snipmating!
 
-
 [^1]: No sarcasm here!
