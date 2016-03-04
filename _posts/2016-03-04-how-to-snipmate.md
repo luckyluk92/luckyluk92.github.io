@@ -12,7 +12,7 @@ Anyway, this post isn't about VIM itself. The brief introduction was just a simp
 
 First of all, this plugin is a fork of not maintained [snipmate.vim](https://github.com/msanders/snipmate.vim) ([here](https://github.com/msanders/snipmate.vim/pull/67) is an explanation of that matter). So, for those who still are using it, maybe it is time for some upgrade.
 
-In React there is a well defined structure of a component and the fact that this is a javascript (even in es6 flavour) typing this piece of code over and over again is a little bit annoying and tiring. I don't have any issue with Ruby, however, because of lack of braces ( `{}` ) and rare usage of parentheses ( `()` ). That's why snippets for Ruby are quite unnecessary for me but not for javascript.
+In React there is a well defined structure of a component and the fact that this is a javascript (even in es6 flavour) typing this piece of code over and over again is a little bit annoying and tiring. I don't have any issue with Ruby, though, because of lack of braces ( `{}` ) and rare usage of parentheses ( `()` ). That's why snippets for Ruby are quite unnecessary for me but not for javascript.
 
 Very excited that I reminded myself about snippets and increased convenience, I started setting up the plugin. vim-snipmate goes without any snippets, so I decided to create separate [repo](https://github.com/luckyluk92/snippets) for found or created ones.
 
@@ -61,12 +61,12 @@ snippet component
 
 Mirror is defined by `$n`. Where `n` indicates which stop to copy.
 
-Remember the difference. **If you put mirror instead of a stop, your stop will be ingored or the cursor will be placed at the end of a snippet.**
+Remember the difference. **If you put mirror instead of a stop, your stop will be ignored or the cursor will be placed at the end of a snippet.**
 
 Now let's get to...
 
 ## The Struggle
-The struggle, of course, is a bit of an exaggeration, but I had spent at leat 20-30 minutes before I managed to deal with it. The thing is simple. **You must use tabs instead of double whitespace** when defining snippet. I'm not sure if documentation clears this out, does it?
+The struggle, of course, is a bit of an exaggeration, but I had spent at leat 20-30 minutes before I managed to deal with it. The thing is simple. **You must use tabs instead of double whitespace** for indentation. I'm not sure if documentation clears this out, does it?
 
 ## The last element - directories
 Created snippets have to be put somewhere. First of all, these need to be located in `snippets/` directory. Second of all, `snippets/` directory needs to be within *runtimepath*. For me, the best solution is `~/.vim` directory, so I added there a symbolic link to my repo.
