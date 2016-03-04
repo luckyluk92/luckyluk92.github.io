@@ -2,7 +2,7 @@
 layout: post
 title: How to snipmate?
 summary: This post shows how to use snipmate and avoid silly mistakes which can be made by person who use it for the first time.
-date: 2016-03-04 22:00
+date: 2016-03-04 10:00
 tags: vim dajsiepoznac snippets vim-snipmate
 ---
 
