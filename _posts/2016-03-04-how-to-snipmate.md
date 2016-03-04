@@ -83,6 +83,8 @@ Additionally, there are a few ways of organising your snippets within `snippets/
 ## Conclusion
 [vim-snipmate](https://github.com/garbas/vim-snipmate) is a great plugin and if you don't use it, I think you should consider it. If you can't remember some default syntax or you are annoyed with typing over and over again the same code structure, there you go! Remember, however, about these few things above, maybe they will save a little bit of your time.
 
+Do you have any favorite plugins? Tell me about them in the comments!
+
 Clever snipmating!
 
 
