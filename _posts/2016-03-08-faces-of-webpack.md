@@ -60,3 +60,10 @@ I really like the concept of including styles within js file, especially when we
 ```
 I will test it and check if it is a good fit for me. Probably, there will be some post about it.
 
+## The all in
+[Here](http://clarkdave.net/2015/01/how-to-use-webpack-with-rails/) you can find a great article / tutorial about Webpack and how to use it with Rails. It is long, but it shows a lot.
+
+The first thing I liked was moving your javscript files to a different folder rather than to `assets/javascripts`. The author proposed `frontend/javascripts` and the previous one should be for Webpack's output. Then, we put `assets/javascripts` folder to `.gitignore`. Of course, there's other way - putting everything together, but bundled output would be mixed up with our whole frontend. In my opinion, author's view seems interesting and worth of trying and this is what I'm going to do.
+
+There is one section that I'd like to focus on - *Using webpack in production*. I want to understand why I need those steps.
+
