@@ -24,7 +24,7 @@ But before any reading, below you can watch a great talk by [Pete Hunt](https://
 
 The talk shows more advanced configuration, but it will warm you up for some reading below!
 
-Next up, I advise you to read **[Nader's post](https://medium.com/@dabit3/beginner-s-guide-to-webpack-b1f1a3638460#.x3an3crq4)**. He shows basic commands Webpack offers and he explains step by step how to build your first basic config along with an explanation of used attributes.
+Next up, I advise you to read [Nader's post](https://medium.com/@dabit3/beginner-s-guide-to-webpack-b1f1a3638460#.x3an3crq4). He shows basic commands Webpack offers and he explains step by step how to build your first basic config along with an explanation of used attributes.
 
 At this point, some of the concepts from Pete Hunt's talk can clarify.
 
@@ -65,5 +65,19 @@ I will test it and check if it is a good fit for me. Probably, there will be som
 
 The first thing I liked was moving your javscript files to a different folder rather than to `assets/javascripts`. The author proposed `frontend/javascripts` and the previous one should be for Webpack's output. Then, we put `assets/javascripts` folder to `.gitignore`. Of course, there's other way - putting everything together, but bundled output would be mixed up with our whole frontend. In my opinion, author's view seems interesting and worth of trying and this is what I'm going to do.
 
-There is one section that I'd like to focus on - *Using webpack in production*. I want to understand why I need those steps.
+There is one section that I'd like to focus on - *Using webpack in production*. I want to clarify for myself why I need those steps.
 
+First of all, I read [*The Asset Pipeline Guide*](http://guides.rubyonrails.org/asset_pipeline.html). At this point, a sort of poor understanding of steps in mentioned blogpost, turned out to be more clear now. Digesting, fingerprinting, caching, in one hand I knew about these things, but because Rails provides them out of the box I've never thought about manually doing them and what actually is happening in there.
+
+We could let Sprockets to take care of Webpack's bundles as well, but we are *all in*, remember?
+
+Sprockets in order to being able to figure out the real filename of our fingerprinted bundles, creates a manifest file, which is a json file containing the real name and generated digest. To create Webpack's manifest file the author created a rake task for that purpose which is convenient and clean. However, without proper configuration within Rails files, an app won't use it (the manifest).
+
+Then, the author creates some helpers to actually make the files available for browser.
+
+I don't know how about you, but I feel pretty amazed by this. That amazement shows I can't take everything for granted...
+
+## Conclusion
+When I wanted to write a post about Webpack, I had a vision of just a guide, few steps - how to start and where to move on. But, after diving more into some advanced Webpack's freatures, I knew that I have to write not only a guide, but a little discussion with myself for myself. You see, Rails was created having in mind fast development, convenience and above all - *convention over configuration*. As far as I'm concerned, this caused a little bit of ignorance among developers. However, this is understandable. We can't know everything, can we?.
+
+Share with me your experience with Webpack and / or other thoughts.
