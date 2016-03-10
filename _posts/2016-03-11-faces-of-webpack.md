@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Faces of Webpack
-date: 2016-03-08 19:23
+date: 2016-03-11 24:01
+summary: A brief guide for Webpack. Collection of blogposts and conference talks from beginner to more advanced. This also includes my comments.
 tags: dajsiepoznac webpack es6 configuration
 ---
 
