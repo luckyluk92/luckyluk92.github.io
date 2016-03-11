@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Faces of Webpack
-date: 2016-03-11 24:01
 summary: A brief guide for Webpack. Collection of blogposts and conference talks from beginner to more advanced. This also includes my comments.
+date: 2016-03-11 00:01
 tags: dajsiepoznac webpack es6 configuration
 ---
 
@@ -80,5 +80,7 @@ I don't know how about you, but I feel pretty amazed by this. That amazement sho
 
 ## Conclusion
 When I wanted to write a post about Webpack, I had a vision of just a guide, few steps - how to start and where to move on. But, after diving more into some advanced Webpack's freatures, I knew that I have to write not only a guide, but a little discussion with myself for myself. You see, Rails was created having in mind fast development, convenience and above all - *convention over configuration*. As far as I'm concerned, this caused a little bit of ignorance among developers. However, this is understandable. We can't know everything, can we?.
+
+It turned out for me that Webpack has more than one face. In one hand, the basic config is simple, which allows us start quickly, but then if we want more advanced configuration, it requires more awareness. In fact, isn't it actually perfect?
 
 Share with me your experience with Webpack and / or other thoughts.
