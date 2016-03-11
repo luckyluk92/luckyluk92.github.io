@@ -21,7 +21,9 @@ As [#dajsiepoznac](http://dev.kielczykowski.pl/tags/#dajsiepoznac) started, my e
 
 But before any reading, below you can watch a great talk by [Pete Hunt](https://github.com/petehunt) who worked for Instagram at the time. The talk will show you successful usage of Webpack, the real world example (a quite *popular* one) and also reasons why they switched to fairly new solution.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VkTCL6Nqm6Y" frameborder="0" allowfullscreen></iframe>
+<div class='video-responsive'>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/VkTCL6Nqm6Y" frameborder="0" allowfullscreen></iframe>
+</div>
 
 The talk shows more advanced configuration, but it will warm you up for some reading below!
 
@@ -42,7 +44,9 @@ Pete Hunt started a [repo](https://github.com/petehunt/webpack-howto), which is 
 ## Spliting up your app - chunks and styles
 Now, if you need more than putting js files into single bundle, this section is for you. Below you can watch another talk, but this time it contains more advanced topics like bundling your files into several bundles - chunks, and extracting common modules into separate chunk.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/MzVFrIAwwS8" frameborder="0" allowfullscreen></iframe>
+<div class='video-responsive'>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/MzVFrIAwwS8" frameborder="0" allowfullscreen></iframe>
+</div>
 
 As a summary, [here](http://jonathancreamer.com/advanced-webpack-part-1-the-commonschunk-plugin/) and [here](http://jonathancreamer.com/advanced-webpack-part-2-code-splitting/) are two posts written by the speaker.
 
