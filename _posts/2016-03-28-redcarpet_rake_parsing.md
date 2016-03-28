@@ -2,6 +2,7 @@
 layout: post
 title: Redcarpet, Rake and post parsing
 date: 2016-03-28 11:11
+summary: In this post I wrote about using Redcarpet and how I parse a blog post from a file.
 tags: dajsiepoznac reactive-blog mvp redcarpet rake
 ---
 
