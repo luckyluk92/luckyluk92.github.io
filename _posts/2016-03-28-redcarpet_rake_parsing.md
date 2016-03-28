@@ -16,7 +16,7 @@ In the [previous]({% post_url 2016-03-24-minimum-viable-product %}) post I point
 <span>The flow of publishing a new post.</span>
 
 
-## Parsing post
+## Creating a post
 The rake task is suppose to:
 
 * read your file,
@@ -25,7 +25,7 @@ The rake task is suppose to:
 * parse post's content from Markdown to HTML,
 * create a post record using settings and parsed content.
 
-Below you can see an example of post:
+Below you can see an example of a post:
 
 ```markdown
 ---
@@ -37,7 +37,7 @@ tags: test, post
 This is a content of my **super** interesting blogpost.
 ```
 
-and if you ran the task, post will be saved in a database. The example record will look like:
+and if you ran the task, post will be saved in a database. The example record will look like this:
 
 ```ruby
 => #<Post:0x00000006124bb0
@@ -89,8 +89,6 @@ module Parser
 end
 ```
 
-It may change, if I decide that some features are not necessary.
-
 Parsing is extremely simple:
 
 ```ruby
@@ -101,6 +99,7 @@ html_content = markdown.render(markdown_you_want_parse)
 I wrapped this with my own class to make the code less dependable on Redcarpet.
 
 ```ruby
+# app/services/parser/file/post.rb
 module Parser
   class Markdown
 
@@ -119,5 +118,79 @@ module Parser
 end
 ```
 
+### Parser
+A file containing a post has two sections:
+
+* settings,
+* content.
+
+`settings` section is surrounded by `---`, the same way as in Jekyll. As I need to operate on single lines to extract settings section, I used `File.foreach` which gives me an enumerator and it doesn't load the whole file into memory.
+
+```ruby
+module Parser
+  module File
+    class Post
+
+      # ...some code
+
+      def parse
+        file_enumerator = ::File.foreach(PATH + @file_name)
+        if file_enumerator.first.to_s.strip == SETTING_BLOCK
+          file_enumerator.next # omitting the settings block indicator
+          parse_settings(file_enumerator)
+        end
+        parse_content(file_enumerator)
+      end
+
+      # ...some code
+
+    end
+  end
+end
+```
+
+`parse` method manages the enumerator throughout the process of parsing and calls methods to extract both settings and content - `parse_settings` and `parse_content`. Settings are tried to be extracted only if the file begins with `---` (the `SETTING_BLOCK` constant). `parse_settings` method not only extracts settings but pushes the enumerator to the place where the whole block ends, so then the content can be easily obtained.
+
+The whole implementation can be found [here](https://github.com/luckyluk92/reactive-blog/blob/minimum_viable_product/app/services/parser/file/post.rb) and its tests [here](https://github.com/luckyluk92/reactive-blog/blob/minimum_viable_product/spec/services/parser/file/post_spec.rb).
+
+### Rake
+The last step is to make use of the code shown above. For now, I uses a simple rake task to run the parser and create a post record. The task's core looks like this:
+
+```ruby
+post = post_file_parser.settings['id'].present? ? Post.find(post_file_parser.settings['id']) : Post.new
+
+post.update(
+  content: post_file_parser.content,
+  description: post_file_parser.settings['description'],
+  content_html: markdown_parser.render(post_file_parser.content),
+  description_html: markdown_parser.render(post_file_parser.settings['description'].to_s),
+  title: post_file_parser.settings['title'],
+  author: Author.where("(first_name || ' ' || last_name) = ?", post_file_parser.settings['author']).first,
+  publish_date: post_file_parser.settings['publish_date'],
+  tags: post_file_parser.settings['tags'].to_s.split(/,\s+/)
+)
+```
+
+For now, I decided that `Post` will keep both markdown and html content in database. When the whole application will be more interactive I will probably change it and html will be rendered on the fly.
+
+Although, defining a rake task is easy-peasy, I found a little bit awkward to pass an argument and use the environment.
+
+```rake
+namespace :posts do
+  desc 'Parse post\'s markdown file into database object'
+  task :parse, [:file_name] => :environment do |t, args|
+    file_name = args[:file_name]
+
+    # ...some code
+  end
+end
+```
+
+Doesn't `[:file_name] => :environment` look a little bit strange?
+
+## Conclusion
+I don't know, if this solution will last, but it is good enough for now. However, I think that there may be an issue with images in posts. Until they will be served from `public/`, everything should work fine, but when I'd like to include images from `assets/` I will have to override the image renderer in Redcarpet to use correct url.
+
+That's all for today.
 
 
