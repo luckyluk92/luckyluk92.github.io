@@ -20,6 +20,17 @@
   color: #333;
 }
 
+.post img {
+  display: block;
+  margin: auto;
+  & + span {
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+    margin-top: 0.6666rem;
+  }
+}
+
 .post-footer {
   @extend .italic;
   background-color: #eee;
