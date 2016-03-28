@@ -91,6 +91,33 @@ end
 
 It may change, if I decide that some features are not necessary.
 
+Parsing is extremely simple:
+
+```ruby
+markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, your_settings)
+html_content = markdown.render(markdown_you_want_parse)
+```
+
+I wrapped this with my own class to make the code less dependable on Redcarpet.
+
+```ruby
+module Parser
+  class Markdown
+
+    def initialize(settings = DEFAULT_SETTINGS)
+      @markdown_parser = Redcarpet::Markdown.new(
+        Redcarpet::Render::HTML,
+        settings
+      )
+    end
+
+    def render(markdown)
+      @markdown_parser.render(markdown)
+    end
+
+  end
+end
+```
 
 
 
