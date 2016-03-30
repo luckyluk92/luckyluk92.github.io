@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Overriding renderer in Redcarpet
-date: 2016-03-30 21:36
+date: 2016-03-30 20:36
 summary: This post shows how easy is to override Redcarpet's renderer if you need some custom behaviour.
 tags: dajsiepoznac redcarpet reactive-blog
 ---
