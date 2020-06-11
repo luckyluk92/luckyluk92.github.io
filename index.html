@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato&display=swap" rel="stylesheet">
+    <style>
+      html {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        font-family: 'Lato', sans-serif;
+      }
+      .logo {
+        position: absolute;
+        width: 100%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        text-align: center;
+        font-family: 'Fira Code', monospace;
+        font-size: 2rem;
+      }
+      .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        text-align: center;
+        font-family: 'Fira Code', monospace;
+        font-size: 1rem;
+      }
+      .content {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        height: 100%;
+        max-width: 568px;
+        margin: auto;
+        -webkit-box-pack: center;
+        -moz-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-align-self: center;
+        -ms-flex-item-align: center;
+        align-self: center;
+      }
+      .bio {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;	
+        flex-direction: column;
+        -webkit-box-align: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+      .bio__info {
+        text-align: center;
+      }
+      .bio-title {
+        font-size: 2.25rem;
+        margin-top: 1.5rem;
+      }
+      .bio-item {
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+        color: #434343;
+      }
+      .routes {
+        -webkit-box: 1;
+        -moz-box: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        font-size: 2rem;
+        text-align: end;
+      }
+      .routes__item {
+        display: block;
+        color: #000;
+        text-decoration: none;
+      }
+      .routes__item:hover {
+        color: #8A8A8A
+      }
+      .routes__item + .routes__item {
+        margin-top: 2rem;
+      }
+
+      @media only screen and (max-width: 567px) {
+        .content {
+          width: 100%;
+          margin: auto;
+          -webkit-flex-direction: column;
+          -moz-flex-direction: column;
+          -ms-flex-direction: column;	
+          flex-direction: column;
+          -webkit-box-align: center;
+          -moz-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+        }
+        .bio__avatar {
+          width: 180px;
+          height: auto;
+        }
+        .routes {
+          -webkit-box: 1;
+          -moz-box: 0;
+          -webkit-flex: 0;
+          -ms-flex: 0;
+          flex: 0;
+          text-align: center;
+          margin-top: 2rem
+        }
+        .bio-title {
+          font-size: 1.5rem;
+          margin-top: 1rem;
+        }
+        .bio-item {
+          font-size: 1rem;
+          margin-top: 0.5rem;
+        }
+      }
+
+      @media only screen and (max-height: 600px) {
+        .bio__avatar {
+          width: 100px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="logo">
+      fang.code
+    </div>
+
+    <div class="content">
+      <div class="bio">
+        <img class="bio__avatar" src="avatar.png" />
+        <div class="bio__info">
+          <div class="bio-title">Hi, I'm Łukasz</div>
+          <div class="bio-item">Android Developer</div>
+          <div class="bio-item">Skydiver</div>
+          <div class="bio-item">Photography Lover</div>
+        </div>
+      </div>
+      <div class="routes">
+        <a class="routes__item" href="#">MY BLOG</a>
+        <a class="routes__item" href="#">MY INSTAGRAM</a>
+      </div>
+    </div>
+    <div class="footer">
+      Copyright © 2020 fang.code
+    </div>
+  </body>
+</html>
